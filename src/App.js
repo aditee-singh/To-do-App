@@ -10,6 +10,22 @@ class App extends Component {
       list:[]
     }
   }
+
+  addItem(){
+    const newItem = {
+      id = ! + Math.random(),
+      value = this.state.newItem.slice()
+    }
+
+    const list = [...this.state.list]
+
+    list.push(newItem)
+
+    this.setState({
+      list,
+      newItem:""
+    })
+  }
   render(){
     return (
       <div className={classes.App}>
